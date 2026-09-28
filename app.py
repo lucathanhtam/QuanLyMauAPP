@@ -122,7 +122,7 @@ def main_app_view():
                         row_to_insert = [khach_hang, ma_vai, trang_thai, salesman, thanh_phan]
                         
                         # 2. Gọi hàm lưu (Nhớ thay "Trang_tinh_1" bằng tên Tab thực tế trong file Sheet)
-                        append_data_to_sheet("TỔNG HỢP MẪU", row_to_insert) 
+                        append_data_to_sheet("Data_Mau", row_to_insert) 
                         
                         st.success("Đã lưu dữ liệu thành công!")
                     except Exception as e:
@@ -134,7 +134,7 @@ def main_app_view():
         st.header("DASHBOARD BÁO CÁO")
         
         # Nhớ thay "Trang_tinh_1" bằng tên Tab chứa dữ liệu của bạn
-        df_tonghop = get_data_from_sheet("TỔNG HỢP MẪU")
+        df_tonghop = get_data_from_sheet("Data_Mau")
         
         if not df_tonghop.empty:
             # Tạo biểu đồ đơn giản
