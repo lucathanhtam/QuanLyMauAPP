@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import gspread
-from google.oauth2.service_account import Credentials # DÙNG THƯ VIỆN MỚI
+from google.oauth2.service_account import Credentials # Đã cập nhật thư viện mới
 
 # --- CẤU HÌNH TRANG ---
 st.set_page_config(page_title="Hệ thống Quản lý Mẫu R&D", layout="wide")
@@ -13,22 +13,14 @@ def get_google_client():
     """Khởi tạo kết nối với Google Sheets sử dụng Streamlit Secrets."""
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     
-    # Đọc thông tin xác thực từ Streamlit Secrets
-    # Dùng st.secrets["gcp_service_account"] tương ứng với biến bạn đặt ở Bước 1
-    credentials_dict = {
-        "type": st.secrets["gcp_service_account"]["type"],
-        "project_id": st.secrets["gcp_service_account"]["project_id"],
-        "private_key_id": st.secrets["gcp_service_account"]["private_key_id"],
-        "private_key": st.secrets["gcp_service_account"]["private_key"],
-        "client_email": st.secrets["gcp_service_account"]["client_email"],
-        "client_id": st.secrets["gcp_service_account"]["client_id"],
-        "auth_uri": st.secrets["gcp_service_account"]["auth_uri"],
-        "token_uri": st.secrets["gcp_service_account"]["token_uri"],
-        "auth_provider_x509_cert_url": st.secrets["gcp_service_account"]["auth_provider_x509_cert_url"],
-        "client_x509_cert_url": st.secrets["gcp_service_account"]["client_x509_cert_url"],
-    }
+    # 1. Đọc thông tin xác thực từ Streamlit Secrets
+    secrets_dict = dict(st.secrets["gcp_service_account"])
     
-    creds = Credentials.from_service_account_info(credentials_dict, scopes=scope)
+    # 2. FIX LỖI JWT NẰM Ở ĐÂY: Sửa lại ký tự xuống dòng bị sai trong Streamlit Secrets
+    secrets_dict["private_key"] = secrets_dict["private_key"].replace("\\n", "\n")
+    
+    # 3. Tạo credentials bằng thư viện chuẩn của Google
+    creds = Credentials.from_service_account_info(secrets_dict, scopes=scope)
     return gspread.authorize(creds)
 
 def get_data_from_sheet(tab_name):
@@ -121,9 +113,10 @@ def main_app_view():
                     st.warning("Vui lòng điền đầy đủ các trường có dấu *.")
                 else:
                     try:
+                        # Thứ tự data này cần khớp với thứ tự các cột đầu tiên trong Sheet Data_Mau của bạn
                         row_to_insert = [khach_hang, ma_vai, trang_thai, salesman, thanh_phan]
                         
-                        # Thay "Trang_tinh_1" bằng tên tab thực tế
+                        # Đã sửa lại tên tab thành "Data_Mau" theo file CSV của bạn
                         append_data_to_sheet("Data_Mau", row_to_insert) 
                         
                         st.success("Đã lưu dữ liệu thành công!")
@@ -134,17 +127,17 @@ def main_app_view():
     elif choice == "Dashboard & Dữ Liệu":
         st.header("DASHBOARD BÁO CÁO")
         
-        # Thay "Trang_tinh_1" bằng tên tab thực tế
+        # Đã sửa lại tên tab thành "Data_Mau"
         df_tonghop = get_data_from_sheet("Data_Mau")
         
         if not df_tonghop.empty:
             st.subheader("Thống kê Trạng thái")
-            # Nếu cột tên là "Trạng thái (Status)", hãy sửa lại bên dưới cho đúng
-            if "Trạng thái" in df_tonghop.columns: 
-                trang_thai_count = df_tonghop['Trạng thái'].value_counts()
+            # Kiểm tra tên cột trạng thái trong sheet của bạn, nếu là tiếng Việt có dấu thì sửa ở đây
+            if "Trạng thái (Status)" in df_tonghop.columns: 
+                trang_thai_count = df_tonghop['Trạng thái (Status)'].value_counts()
                 st.bar_chart(trang_thai_count)
             else:
-                st.info("Không tìm thấy cột 'Trạng thái' để vẽ biểu đồ.")
+                st.info("Không tìm thấy cột 'Trạng thái (Status)' để vẽ biểu đồ.")
             
             st.subheader("Dữ liệu Tổng hợp")
             search_term = st.text_input("Tìm kiếm...")
