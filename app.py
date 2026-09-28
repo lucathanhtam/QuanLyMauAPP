@@ -10,7 +10,7 @@ st.set_page_config(page_title="Hệ thống Quản lý Mẫu R&D", layout="wide"
 
 # --- KẾT NỐI GOOGLE SHEETS ---
 # CHÚ Ý QUAN TRỌNG: Bạn cần thay đổi tên file JSON và tên Sheet cho đúng với thực tế của bạn
-SERVICE_ACCOUNT_FILE = 'he_thong_mau_key.json' # Đảm bảo file JSON này nằm cùng thư mục với app.py
+SERVICE_ACCOUNT_FILE = 'hquanlymauapp-91ab4ea89b88.json' # Đảm bảo file JSON này nằm cùng thư mục với app.py
 SHEET_NAME = 'He_Thong_R&D_Mau' 
 
 def get_google_client():
