@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "quanlymauapp",
+  "private_key_id": "97c08582ac72b904980ba828b80d6263b2a6f126",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDP2R7VUdJkeFIk\ncb3JcyGMDxH1eBUjcPRZcR3Fo6lvTQt0FgE3uEK+ZcZNmyRBsNbdKCE1uOdm8KKv\novzndABE/uo69SXaKZSfkzVPrjaM2bYnIDyozJW4kpBjmKox55vvjB1b5gLcyssm\nSYeLSMogmruiwTcLI07FKJc4rA/OKj1ZdW9Fwz9zE+kv1PGslRhV+E6KFPVKXVqK\n9GLEinJ9ccnTQIRSG7fuGi3w4Xzm07ze8GWynGaKK9MUOYSznqbAiPRLeMeDocdQ\n1+l4YxRHYp4XQ11fBWUDCG9UBaLd8M6+YkpdoTSXpe8FN0cjb60gKbjFB0mPEMfZ\nqkDd6xpXAgMBAAECggEADKEZQLCsPjhEvtEod9/73FpNZuMeibJDLqzIYyogJqgB\nolKfTVGawJ3yMDn/4yafJP4GEpEYgnFBuWFdHk/hSk/2Tzx2dIH39Wrzn31VnuEF\nspfrXP2yupiGlylUwhvcJkXsbMProvCG6oh86MeJ/J7aTY08TnwdPQP2jauAJFs2\n9F4I0NWQiB518UxQ8PuPr7DnP3GFs2jB2tu+t+JVwR0RvRia1UbdI4m4/rpeFnn6\nvOOumQ9w5UqySvgX4JllPy5Z6rE44G+nZajM745pdEdOZr9UsyYFwe0yx8itjm4H\nsTRC0ZHrcZNHpRhsYb7GbNNoiMhBJq90nUxVeg5H0QKBgQDzoqtZsEtVvZgB9zEe\nW/0Zs6BnMmdZiEl2mic34NtJnNgUALnyxGzhOLOtlxol9rVU8ClRQD4DEXvaUh9E\nNEpRpbZK7Hv75R5BUmr0QdYR3TLeonKZpU9vgoV3NeNPSieECTb5EOJSKHEd1MK6\njqd8bLzDBhl4yY2kAS41eVxfZwKBgQDaZX/q/eCnt7aM0VCR0dd/vNLd0QXwjnrL\n2N6jSjfKvl5RpHlv7a6u9CGw7uD9t9pbBQEp5GZiZU9M9okdBS2T1/VhfC+kQ/8K\nF+nL3VSu1zXoZ0dorOzE9UqDI351nu85StpWHxY6Swfd3JxE3o0vhAvf7gAWgUPi\nV7uFRBDHkQKBgHg9WAOzlfqCz3po3Lz2+TquBAPqREdTk64M9j4FozP5TErS8PJ3\nLqUYrtSFNkp2L5fzzvBinDg3cMCWtweaJvOUrRrdC3ON6Bik7FQQCe5XFLv7wEND\n6qhF6kijN8Px/P6U7aSOSKPzgaAPWOtpbA9kOuSlJf0Ou/CtBHkvo/8RAoGBALkS\nhGkuBV/7hf4lLuKzcaw05njEtgTZqOPv/xNfRJJR6nnDKImaYIqwJZDbjdxUHf09\n63OFsuG1OpNc5GqsRahgvPeElpbcbFcwVpbFFAsqIuu0AcaJrAdoWmFxBaxFKDJj\n5UxQAbUaeisf1WljMz/N5YY5GOf5WP6JHEbdnF6RAoGBAKO2C/C4nLHVxLms+YOc\nPpLPWOwloP9HidI2mWV1vT1TpEjkmb1h5VZrKQmpiCN1NuLXyYkKbIoq0vX440kf\ndwXqzRzxXRyqcBbF9mfj+7YKh9mlGRd0hWoCEdwYLflCFmO03C6CT+OTF39DKuiX\nyO1dhtlJWEXA1pPBfGFdoX/y\n-----END PRIVATE KEY-----\n",
+  "client_email": "quanlymauapp@quanlymauapp.iam.gserviceaccount.com",
+  "client_id": "109825815130653219697",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quanlymauapp%40quanlymauapp.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
