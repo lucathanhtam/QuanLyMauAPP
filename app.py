@@ -124,7 +124,7 @@ def main_app_view():
                         row_to_insert = [khach_hang, ma_vai, trang_thai, salesman, thanh_phan]
                         
                         # Thay "Trang_tinh_1" bằng tên tab thực tế
-                        append_data_to_sheet("Trang_tinh_1", row_to_insert) 
+                        append_data_to_sheet("Data_Mau", row_to_insert) 
                         
                         st.success("Đã lưu dữ liệu thành công!")
                     except Exception as e:
@@ -135,7 +135,7 @@ def main_app_view():
         st.header("DASHBOARD BÁO CÁO")
         
         # Thay "Trang_tinh_1" bằng tên tab thực tế
-        df_tonghop = get_data_from_sheet("Trang_tinh_1")
+        df_tonghop = get_data_from_sheet("Data_Mau")
         
         if not df_tonghop.empty:
             st.subheader("Thống kê Trạng thái")
